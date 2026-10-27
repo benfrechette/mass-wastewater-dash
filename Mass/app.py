@@ -6,7 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-DATA_FILE = "data/Wastewater Data-Table 1.csv"
+DATA_FILE = "Mass/data/Wastewater Data-Table 1.csv"
 
 
 @st.cache_data
@@ -61,10 +61,6 @@ try:
 except Exception as error:
     st.error(f"Could not load the wastewater data: {error}")
     st.stop()
-
-
-
-
 
 
 st.title("Massachusetts Wastewater Dashboard")
@@ -147,7 +143,7 @@ metric2.metric(
 )
 
 metric3.metric(
-    "Detected Records",
+    "Positive Results",
     f"{filtered['detect_status'].str.lower().eq('detected').sum():,}"
 )
 
